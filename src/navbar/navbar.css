@@ -1,0 +1,41 @@
+.navbar{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    background:#303030;
+    height: 12vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navbar h1{
+    flex-grow: 1;
+    color: white;
+    text-align: center;
+    font-size: 8vh;
+    align-self: center;
+}
+
+.links{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.links button{
+    font-size: 3vh;
+    color:white;
+    align-self: center;
+    height: 12vh;
+    border: none;
+    background: transparent;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.links button:hover{
+    color: #B0B0B0;
+    border-bottom: 3.5px solid white;
+}
