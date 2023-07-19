@@ -90,6 +90,20 @@
     transition: all 0.5s ease;
 }
 
+.error-container{
+    border: none;
+    border-radius: 7px;
+    margin-top: 5vh;
+    background: #ffdede;
+    padding: 2vh;
+}
+
+.error-container p{
+    font-size: 17px;
+    font-weight: 200;
+    color: #841617;
+}
+
 .submit-create-btn:hover{
     background: #0039a6;
 }
