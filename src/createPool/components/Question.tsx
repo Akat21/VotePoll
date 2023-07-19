@@ -10,7 +10,7 @@ const Question: React.FC<QuestionProps> = ({question, setQuestion}) =>{
     return(
         <div className='question-creation-container'>
             <label htmlFor="question">Question</label>
-            <input type="text" className="question" name="question" 
+            <input type="text" className="question" name="question" placeholder='Type your question here'
                    value={(question.toString())} onChange={(e)=>setQuestion(e.target.value)}/>
         </div>
     )

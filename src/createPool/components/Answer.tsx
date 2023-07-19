@@ -29,7 +29,7 @@ const Answer: React.FC<AnswerProps> = ({answers, setAnswers}) =>{
     const Answers = answers.map((item, idx) => {
         return( 
             <div key={idx} className='answers-item-container'>
-                <input type="text" className="answer" name="answer" value={item} onChange={(e)=>onHandleInputChange(e.target.value, idx)}/>
+                <input type="text" className="answer" name="answer" value={item} onChange={(e)=>onHandleInputChange(e.target.value, idx)} placeholder={'Answer ' + (idx + 1)}/>
                 {answers.length > 1 && <button type='button' onClick={() => onHandleInputDelete(idx)}>
                     <FontAwesomeIcon icon={faTimes} style={{opacity: 0.4}} fontSize={'2.5vh'}/>
                 </button>}
@@ -44,7 +44,7 @@ const Answer: React.FC<AnswerProps> = ({answers, setAnswers}) =>{
             {Answers}
             <button type='button' onClick={onHandleInputAppend} className='append-btn'>
                 <FontAwesomeIcon icon={faPlus} style={{marginRight:'7px', opacity: 0.4}} fontSize={'2.5vh'}/> 
-                {"Add Question"}
+                {"Add Answer"}
             </button>
         </div>
     )
