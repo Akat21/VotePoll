@@ -14,7 +14,7 @@ const MainForm: React.FC = () =>{
     const onSubmitHandle = () =>{
         if (question.length > 0 && answers.every((answer) => answer.length > 0)){
             const randomId = Math.random().toString(36).slice(2, 12)
-            navigate(`/${randomId}`);
+            navigate(`/${randomId}`, {state: {question: question} });
         } else { 
             answers.every((answer) => answer.length > 0) === false ? setErrorMessage("Your answers can not be empty!") : 
             question.length === 0 ? setErrorMessage("You need to provide question!") : setErrorMessage(undefined)
