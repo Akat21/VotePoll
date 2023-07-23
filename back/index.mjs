@@ -1,24 +1,30 @@
 import express from "express";
-import cors from "cors";
 import "./loadEnvironment.mjs";
-import "express-async-errors";
-import posts from "./routes/posts.mjs";
+import { connectToDb, getDb } from "./db.mjs";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
-// Load the /posts routes
-app.use("/posts", posts);
-
-// Global error handling
-app.use((err, _req, res, next) => {
-    res.status(500).send("Uh oh! An unexpected error occured.")
+//db connection
+let db
+connectToDb((err)=>{
+  if (!err){
+    app.listen(PORT, () => {
+      console.log(`Server is running on port: ${PORT}`);
+    });
+    db = getDb()
+  }
 })
-  
-// Start the Express server
-  app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
-});
+
+// Routes
+app.get('/polls', (req, res)=>{
+  let books = []
+  db.collection('polls').find().sort({question: 1}).forEach(book => books.push(book))
+    .then(()=>{
+      res.status(200).json(books)
+    })
+    .catch(()=>{
+      res.status(500).json({err: "Could not fetch document"})
+    })
+})
+
