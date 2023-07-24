@@ -2,9 +2,11 @@ import express from "express";
 import "./loadEnvironment.mjs";
 import { ObjectId } from "mongodb";
 import { connectToDb, getDb } from "./db.mjs";
+import cors from 'cors'
 
 const PORT = process.env.PORT || 5050;
 const app = express();
+app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json())
 
 //db connection
