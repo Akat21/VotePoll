@@ -27,7 +27,7 @@ const MainForm: React.FC = () =>{
 
     const postData: () => Promise<void> = async () =>{
         try{
-            const response: MongoDBResponse = await VotePollAPI.post('', {question: "question", answers: ["1", "2"]})
+            const response: MongoDBResponse = await VotePollAPI.post('', {question: question, answers: answers})
             navigate(`/${response.insertedId}`);
         } catch(err) {
             console.log(err)

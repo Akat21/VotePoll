@@ -6,3 +6,8 @@ export interface MongoDBResponse{
     acknowledged: boolean,
     insertedId: string
 }
+
+export interface Poll{
+    question: string,
+    answers: string[]
+}
