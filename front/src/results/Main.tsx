@@ -13,6 +13,14 @@ const Main: React.FC<MainProps> = ({question, answers}) => {
         return answers.reduce((acc, obj) => acc + obj.count, 0)
     }, [answers])
 
+    const calculateBorderRadius = React.useCallback((answer: Answers)=>{
+        if ((answer.count/votes * 100) === 100){
+            return {borderRadius: '20px'}
+        } else {
+            return {borderBottomLeftRadius: '20px', borderTopLeftRadius: '20px'}
+        }
+    },[])
+
     const Answers = answers.map((answer, idx)=>{
         return(
             <div className="vote-count-container" key={idx}>
@@ -24,7 +32,8 @@ const Main: React.FC<MainProps> = ({question, answers}) => {
                     </div>
                 </div>
                 <div className="progress-bar">
-                    <div className="progress" style={{width: `${(answer.count/votes * 100)}%`}}></div>
+                    <div className="progress" 
+                         style={{width: `${(answer.count/votes * 100)}%`, ...calculateBorderRadius(answer)}} />
                 </div>
             </div>
         )
@@ -35,7 +44,7 @@ const Main: React.FC<MainProps> = ({question, answers}) => {
             <div className="left-content-container">
                 <h1>{question}</h1>
                 {Answers}
-                <p>Total votes: {votes}</p>
+                <p className='total'>Total votes: {votes}</p>
             </div>
             <div className="right-content-container">
                 <Chart answers={answers}/>

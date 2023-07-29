@@ -5,6 +5,7 @@ import Answer from "./components/Answer";
 import ErrorBox from "./components/ErrorBox";
 import VotePollAPI from "../api/VotePollAPI";
 import { Answers, MongoDBResponse } from "../../types/customTypes";
+import _ from 'lodash'
 
 const MainForm: React.FC = () =>{
     const navigate = useNavigate();
@@ -27,7 +28,8 @@ const MainForm: React.FC = () =>{
 
     const postData: () => Promise<void> = async () =>{
         try{
-            const response: MongoDBResponse = await VotePollAPI.post('', {question: question, answers: answers})
+            const uniqueAnswers = _.uniqBy(answers, 'name')
+            const response: MongoDBResponse = await VotePollAPI.post('', {question: question, answers: uniqueAnswers})
             navigate(`/${response.insertedId}`);
         } catch(err) {
             console.log(err)

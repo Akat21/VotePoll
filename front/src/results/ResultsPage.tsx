@@ -1,10 +1,15 @@
 import React from 'react'
 import './resultsPage.css'
+import { useNavigate, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import Main from './Main'
 import { Poll } from '../../types/customTypes'
 import VotePollAPI from '../api/VotePollAPI'
 
 const ResultsPage: React.FC = () =>{
+    const navigate = useNavigate();
+    const location = useLocation();
     const [pollData, setPollData] = React.useState<Poll | undefined>()
     
     React.useEffect(()=>{
@@ -17,6 +22,8 @@ const ResultsPage: React.FC = () =>{
             }
         }
         getData()
+        const fetchDataInterval = setInterval(getData, 5000);
+        return () => clearInterval(fetchDataInterval);
     },[])
 
 
@@ -25,8 +32,11 @@ const ResultsPage: React.FC = () =>{
             <div className="poll-results-container">
                 {pollData && <Main question={pollData.question} answers={pollData.answers}/>}
                 <div className="btns-container">
-                    <button>Refresh</button>
-                    <button>Back to Poll</button>
+                    <button>
+                        <FontAwesomeIcon icon={faArrowsRotate} spin />
+                        <p>Auto Refresh On</p>
+                    </button>
+                    <button onClick={() => navigate(`${location.pathname.slice(0, -8)}`)}>Back to Poll</button>
                 </div>
             </div>
         </div>

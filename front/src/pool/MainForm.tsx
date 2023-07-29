@@ -16,8 +16,11 @@ const MainForm: React.FC<MainFormProps> = ({question, answers}) =>{
     const location = useLocation();
 
     const onSubmitHandle = () =>{
-        console.log(answer)
         answer ? postData() : setErrorMessage("You need to choose an answer!")
+    }
+
+    const onShowResultsHandle = () =>{
+        navigate(`${location.pathname}/results`)
     }
 
     const postData: () => Promise<void> = async () =>{
@@ -58,6 +61,7 @@ const MainForm: React.FC<MainFormProps> = ({question, answers}) =>{
                 {Answers}
                 {errorMessage && <ErrorBox text={errorMessage}/>}
                 <button type="button" onClick={onSubmitHandle} className="submit-vote-btn">Vote</button>
+                <button type="button" onClick={onShowResultsHandle} className="show-results-btn">Show Results</button>
             </form>
         </div>
     )
