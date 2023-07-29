@@ -98,10 +98,11 @@
     padding: 2vh;
 }
 
-.error-container p{
+.error-txt{
     font-size: 17px;
     font-weight: 200;
     color: #841617;
+    opacity: 1;
 }
 
 .submit-create-btn:hover{

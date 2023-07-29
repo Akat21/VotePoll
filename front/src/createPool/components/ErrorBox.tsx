@@ -7,7 +7,7 @@ interface ErrorBoxProps{
 const ErrorBox: React.FC<ErrorBoxProps> = ({text}) =>{
     return(
         <div className="error-container">
-            <p>{text}</p>
+            <h3 className="error-txt">{text}</h3>
         </div>
     )
 }

@@ -10,13 +10,13 @@ interface LinkFormProps{
 const LinkForm: React.FC<LinkFormProps> = ({link}) =>{
     return(
         <label className='share-link-input'>
-            <input type="text" value={link}/>
+            <input type="text" value={link} readOnly={true}/>
             <CopyToClipboard text={link}>
                 <button data-tooltip-id="my-tooltip" data-tooltip-content={"Copied!"} data-tooltip-delay-hide={2000}>
                     <CopyToClipboardIcon />
                 </button>
             </CopyToClipboard>
-            <Tooltip id='my-tooltip' openOnClick={true} style={{transition: "ease 0.5s all"}}/>
+            <Tooltip id='my-tooltip' openOnClick={true}/>
         </label>
     )
 }

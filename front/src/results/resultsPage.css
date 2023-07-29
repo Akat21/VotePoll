@@ -1,0 +1,115 @@
+.poll-results-container{
+    margin-top: 5vh;
+    border-radius: 7px;
+    border-top: 4px solid gold;
+    width: auto;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5vh;
+}
+
+.btns-container{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+
+.btns-container button:nth-child(1){
+    background: #3457D5;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    width: 25%;
+    height: 37px;   
+    margin-top: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btns-container button:nth-child(1):hover{
+    background: #0039a6;
+}
+
+.btns-container button:nth-child(2){
+    background: white;
+    border: 1px solid silver;
+    border-radius: 7px;
+    color: gray;
+    width: 25%;
+    height: 37px;   
+    margin-top: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btns-container button:nth-child(2):hover{
+    background: #F0F0F0;
+    border: 1px solid gray;
+}
+
+.main-content-results-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-content-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content-container,
+.main-content-results-container h1{
+    margin: 15px;
+    margin-top: 35px;
+}
+
+.main-content-results-container p:nth-child(5){
+    margin: 15px;
+    margin-bottom: 35px;
+}
+
+.vote-count-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    margin: 15px;
+}
+
+.vote-count-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vote-count-label-right{
+    display: flex;
+    flex-direction: row;
+}
+
+.vote-count-label-right p:nth-child(2){
+    margin-left: 8px;
+}
+
+.vote-count-label p{
+    margin-bottom: 5px;
+}
+
+.progress-bar{
+    align-self: center;
+    background: white;
+    border: solid 1px silver;
+    height: 20px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.progress{
+    align-self: center;
+    background: lightgreen;
+    height: 20px;
+    width: 90%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

@@ -9,5 +9,10 @@ export interface MongoDBResponse{
 
 export interface Poll{
     question: string,
-    answers: string[]
+    answers: Answers[]
+}
+
+export interface Answers{
+    name: string,
+    count: number
 }

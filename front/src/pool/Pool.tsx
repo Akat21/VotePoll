@@ -9,11 +9,12 @@ import './poll.css'
 const Pool: React.FC = () =>{
     const location = useLocation()
     const [pollData, setPollData] = React.useState<Poll | undefined>()
+    const url = window.location.href
 
     React.useEffect(()=>{
         const getData: () => Promise<void> = async () =>{
             try{
-                const response: Poll = await VotePollAPI.get(`/${location.pathname.substring(1)}`)
+                const response: Poll = await VotePollAPI.get(`${location.pathname}`)
                 setPollData({question: response.question, answers: response.answers})
             } catch(err) {
                 console.log(err)
@@ -22,12 +23,11 @@ const Pool: React.FC = () =>{
         getData()
     }, [])
 
-    
 
     return(
         <div className="poll-creator-main-container">
             {pollData && <MainForm question={pollData.question} answers={pollData.answers}/>}
-            <ShareForm link={"link"}/>
+            <ShareForm link={url}/>
         </div>
     ) 
 }
