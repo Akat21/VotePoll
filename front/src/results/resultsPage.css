@@ -1,11 +1,11 @@
 .poll-results-container{
-    margin-top: 5vh;
+    margin-top: 85px;
     border-radius: 7px;
     border-top: 4px solid gold;
     width: auto;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 5vh;
+    margin-bottom: 35px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
@@ -25,7 +25,7 @@
     border: none;
     border-radius: 7px;
     color: white;
-    width: 25%;
+    width: 35%;
     height: 37px;   
     margin-top: 25px;
     transition: all 0.5s ease;
@@ -35,16 +35,12 @@
     margin-left: 20px;
 }
 
-.btns-container button:nth-child(1):hover{
-    /* background: #0039a6; */
-}
-
 .btns-container button:nth-child(2){
     background: white;
     border: 1px solid silver;
     border-radius: 7px;
     color: gray;
-    width: 25%;
+    width: 35%;
     height: 37px;   
     margin-top: 25px;
     margin-left: 20px;
@@ -126,3 +122,31 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+
+@media screen and (max-width: 850px){
+    .btns-container button:nth-child(1){
+        width: 50%;
+    }
+
+    .btns-container button:nth-child(2){
+        width: 50%;
+    }
+
+    .poll-results-container{
+        width: 100%;
+    }
+
+    .main-content-results-container{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content-container{
+        width: 100%;
+    }
+
+    .vote-count-container{
+        width: 95%;
+    }
+  }

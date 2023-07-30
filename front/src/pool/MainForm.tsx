@@ -60,8 +60,10 @@ const MainForm: React.FC<MainFormProps> = ({question, answers}) =>{
                 <h2>Make a choice:</h2>
                 {Answers}
                 {errorMessage && <ErrorBox text={errorMessage}/>}
-                <button type="button" onClick={onSubmitHandle} className="submit-vote-btn">Vote</button>
-                <button type="button" onClick={onShowResultsHandle} className="show-results-btn">Show Results</button>
+                <div className="btns-vote-container">
+                    <button type="button" onClick={onSubmitHandle} className="submit-vote-btn">Vote</button>
+                    <button type="button" onClick={onShowResultsHandle} className="show-results-btn">Show Results</button>
+                </div>
             </form>
         </div>
     )

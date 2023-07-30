@@ -11,7 +11,7 @@ const MainForm: React.FC = () =>{
     const navigate = useNavigate();
 
     const [question, setQuestion] = React.useState<string>("")
-    const [answers, setAnswers] = React.useState<Answers[]>([{name: "", count: 0}])
+    const [answers, setAnswers] = React.useState<Answers[]>([{name: "", count: 0}, {name: "", count: 0}])
     const [errorMessage, setErrorMessage] = React.useState<string | undefined>()
 
     const onSubmitHandle = () =>{
@@ -42,6 +42,7 @@ const MainForm: React.FC = () =>{
                 <Question question={question} setQuestion={setQuestion}/>
                 <Answer answers={answers} setAnswers={setAnswers}/>
                 {errorMessage && <ErrorBox text={errorMessage}/>}
+                <hr />
                 <button type="button" onClick={onSubmitHandle} className="submit-create-btn">Submit</button>
             </form>
         </div>

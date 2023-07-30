@@ -1,11 +1,11 @@
 .pool-answers-main-form-container{
-    margin-top: 5vh;
+    margin-top: 35px;
     border-radius: 7px;
     border-top: 4px solid gold;
-    width: 80vh;
+    width: 500px;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 5vh;
+    margin-bottom: 35px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
@@ -79,17 +79,22 @@
     border: 1px solid gray;
 }
 
+.btns-vote-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .submit-vote-btn:hover{
     background: #0039a6;
 }
 
 .pool-share-form-container{
-    margin-top: 5vh;
+    margin-top: 35px;
     border-radius: 7px;
-    width: 80vh;
+    width: 500px;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 5vh;
+    margin-bottom: 35px;
 }
 
 .share-title-container{
@@ -116,6 +121,7 @@
     flex-direction: column;
     align-items: center;
     margin: 15px;
+    margin-bottom: 30px;
 }
 
 .share-input-container input{
@@ -157,3 +163,23 @@
     height: 100%;
     align-self: flex-start;
 }
+
+@media screen and (max-width: 500px){
+    .submit-vote-btn{
+        width: 100%;
+    }
+
+    .show-results-btn{
+        width: 100%;
+    }
+
+    .pool-answers-main-form-container{
+        margin-top: 80px;
+        width: 100%;
+        background: white;
+    }
+
+    .pool-share-form-container{
+        width: 100%;
+    }
+  }

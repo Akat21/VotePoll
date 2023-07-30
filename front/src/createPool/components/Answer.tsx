@@ -32,7 +32,7 @@ const Answer: React.FC<AnswerProps> = ({answers, setAnswers}) =>{
             <div key={idx} className='answers-item-container'>
                 <input type="text" className="answer" name="answer" value={item.name} onChange={(e)=>onHandleInputChange(e.target.value, idx)} placeholder={'Answer ' + (idx + 1)}/>
                 {answers.length > 1 && <button type='button' onClick={() => onHandleInputDelete(idx)}>
-                    <FontAwesomeIcon icon={faTimes} style={{opacity: 0.4}} fontSize={'2.5vh'}/>
+                    <FontAwesomeIcon icon={faTimes} style={{opacity: 0.4}} fontSize={'18px'}/>
                 </button>}
             </div>
             
@@ -44,7 +44,7 @@ const Answer: React.FC<AnswerProps> = ({answers, setAnswers}) =>{
             <label htmlFor="answer">Answers</label>
             {Answers}
             <button type='button' onClick={onHandleInputAppend} className='append-btn'>
-                <FontAwesomeIcon icon={faPlus} style={{marginRight:'7px', opacity: 0.4}} fontSize={'2.5vh'}/> 
+                <FontAwesomeIcon icon={faPlus} style={{marginRight:'7px', opacity: 0.4}} fontSize={'15px'}/> 
                 {"Add Answer"}
             </button>
         </div>
