@@ -25,9 +25,11 @@ const Pool: React.FC = () =>{
 
 
     return(
-        <div className="poll-creator-main-container">
-            {pollData && <MainForm question={pollData.question} answers={pollData.answers}/>}
-            <ShareForm link={url}/>
+        <div>
+            {pollData && <div className="poll-creator-main-container">
+                <MainForm question={pollData.question} answers={pollData.answers}/>
+                <ShareForm link={url}/>
+            </div>}
         </div>
     ) 
 }

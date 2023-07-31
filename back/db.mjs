@@ -1,11 +1,12 @@
 import { MongoClient } from "mongodb"
+import './loadEnvironment.mjs'
 
 let dbConnection
 
 export const connectToDb = (cb) =>{
-    MongoClient.connect('mongodb://127.0.0.1:27017/VotePollDB')
+    MongoClient.connect(`${process.env.MONGO_DB_URI}`)
     .then((client) => {
-        dbConnection = client.db()
+        dbConnection = client.db('VotePollDB')
         return cb()
     })
     .catch((err) => {

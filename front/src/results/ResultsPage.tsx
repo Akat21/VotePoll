@@ -29,8 +29,8 @@ const ResultsPage: React.FC = () =>{
 
     return(
         <div className="poll-creator-main-container">
-            <div className="poll-results-container">
-                {pollData && <Main question={pollData.question} answers={pollData.answers}/>}
+           {pollData && <div className="poll-results-container">
+                <Main question={pollData.question} answers={pollData.answers}/>
                 <div className="btns-container">
                     <button>
                         <FontAwesomeIcon icon={faArrowsRotate} spin />
@@ -38,7 +38,7 @@ const ResultsPage: React.FC = () =>{
                     </button>
                     <button onClick={() => navigate(`${location.pathname.slice(0, -8)}`)}>Back to Poll</button>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }

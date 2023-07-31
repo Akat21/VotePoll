@@ -3,21 +3,24 @@
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
-    background:#303030;
+    background: #131111;
     top: 0;
     left: 0;
     width: 100%;
-    height: 12vh;
+    height: 80px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     z-index: 100;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 .navbar h1{
     flex-grow: 1;
     color: white;
     text-align: center;
-    font-size: 8vh;
+    font-size: 60px;
     align-self: center;
+    user-select: none;
 }
 
 .links{
@@ -28,14 +31,14 @@
 }
 
 .links button{
-    font-size: 3vh;
+    font-size: 20px;
     color:white;
     align-self: center;
-    height: 12vh;
+    height: 80px;
     border: none;
     background: transparent;
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding-left: 12px;
+    padding-right: 12px;
     cursor: pointer;
     transition: color 0.5s ease;
 }

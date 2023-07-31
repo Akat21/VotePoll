@@ -4,11 +4,11 @@
     align-items: center;
     align-content: center;
     margin-top: 60px;
+    padding-top: 80px;
     border-radius: 7px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
-
 
 .pool-creator-main-form-container{
     margin-top: 40px;
