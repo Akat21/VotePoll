@@ -47,3 +47,11 @@
     color: #B0B0B0;
     border-bottom: 3.5px solid white;
 }
+
+@media screen and (max-width: 500px){
+    .navbar h1{
+        font-size: 45px;
+    }
+
+    
+}

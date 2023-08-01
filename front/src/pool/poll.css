@@ -147,11 +147,12 @@
     bottom: 0;
     height: 32px;
     width: 30px;
-    background: none;
+    background: white;
     border: 1px solid silver;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
+    z-index: 20;
 }
 
 .share-link-input button:hover{
@@ -180,6 +181,10 @@
     }
 
     .pool-share-form-container{
+        width: 100%;
+    }
+
+    .share-input-container input{
         width: 100%;
     }
   }
