@@ -1,9 +1,9 @@
-import { MongoClient } from "mongodb"
-import './loadEnvironment.mjs'
+const { MongoClient } = require("mongodb");
+require('./loadEnvironment.js');
 
 let dbConnection
 
-export const connectToDb = (cb) =>{
+const connectToDb = (cb) =>{
     MongoClient.connect(`${process.env.MONGO_DB_URI}`)
     .then((client) => {
         dbConnection = client.db('VotePollDB')
@@ -15,6 +15,11 @@ export const connectToDb = (cb) =>{
     })
 }
 
-export const getDb = () =>{
+const getDb = () =>{
     return dbConnection
 }
+
+module.exports = {
+    connectToDb,
+    getDb,
+};

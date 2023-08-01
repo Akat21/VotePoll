@@ -1,10 +1,11 @@
-import express from "express";
-import "./loadEnvironment.mjs";
-import { ObjectId } from "mongodb";
-import { connectToDb, getDb } from "./db.mjs";
-import cors from 'cors'
+const express = require("express");
+require("./loadEnvironment.js");
+const { ObjectId } = require("mongodb");
+const { connectToDb, getDb } = require("./db.js");
+const cors = require("cors");
+const functions = require("firebase-functions");
 
-const PORT = process.env.PORT || 5050;
+const port = 3000
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -13,14 +14,18 @@ app.use(express.json())
 let db
 connectToDb((err)=>{
   if (!err){
-    app.listen(PORT, () => {
-      console.log(`Server is running on port: ${PORT}`);
+    app.listen(port, () => {
+      console.log(`Server is running on port: ${port}`);
     });
     db = getDb()
   }
 })
 
 // Routes
+app.get('/', (req, res) => {
+  res.send("Welcome")
+})
+
 app.get('/polls', (req, res)=>{
   let books = []
   db.collection('polls').find().sort({question: 1}).forEach(book => books.push(book))
@@ -87,3 +92,5 @@ app.patch('/polls/:id', (req, res) => {
     res.status(500).json({error: "Not valid document Id"})
   }
 })
+
+exports.api = functions.https.onRequest(app)
